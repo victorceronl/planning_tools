@@ -8,6 +8,6 @@
     completion("No se encontraron imágenes en esta página.");
   } else {
     // Devuelve las URLs separadas por salto de línea
-    completion(imgs.join("\n"));
+    completion(imgs.join("\n\n\n"));
   }
 })();
