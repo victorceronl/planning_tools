@@ -36,3 +36,7 @@ Es mi responsabilidad trabajar.
 Concentrarme en lo que es importante, crucial y urgente es la forma correcta para salir adelante.
 Conseguir mis objetivos y resultados es esencial para trabajar, luchar por mis metas. 
 Implementar soluciones que me permitan automatizar mi flujo de trabajo es esencial para salir adelante. Conseguir crear el maximo valor posible.-
+
+
+11:23
+Codigo para trabajar con archivos txt y convertirlos a ePub
