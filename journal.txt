@@ -49,3 +49,11 @@ Debo encontrar la manera correcta de crear valor, salir adelante y conseguir cad
 13:51
 Considero esencial estructurar y definir los problemas que quiero resolver. Atender con claridad cada uno de ellos.
 Ser fiel a mis principios y concentrarme de forma estoica y disciplinada.
+
+02/10/2025
+El día de hoy es esencial concentrarme en crear codigo esencial que me permita trabajar de forma disciplinada.
+Tener clairidad y enfocarme en lo que considero adecuado. Me comprometo a crear valor, a trabajar de forma disciplinada.
+
+09:54
+Modifiqué algunos codigos para crear archivos ePub basicos, con estructura. 
+Areas de mejora: Definir la secuencia de codigos. Implementar un programa que automatice la creación del archivo.

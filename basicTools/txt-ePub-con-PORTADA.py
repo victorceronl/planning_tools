@@ -49,8 +49,8 @@ def txt_a_epub(ruta_txt, ruta_epub, titulo="Mi Libro", autor="Desconocido", port
 if __name__ == "__main__":
     txt_a_epub(
         "mi_texto.txt",        # archivo de entrada
-        "nombre-ebook.epub",       # archivo de salida
-        titulo="nombre-ebook",
+        "nombre.epub",       # archivo de salida
+        titulo="TITULO",
         autor="NOMBRE",
         portada="portada.jpg"  # imagen de portada opcional
     )
