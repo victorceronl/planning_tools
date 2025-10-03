@@ -57,3 +57,7 @@ Tener clairidad y enfocarme en lo que considero adecuado. Me comprometo a crear 
 09:54
 Modifiqué algunos codigos para crear archivos ePub basicos, con estructura. 
 Areas de mejora: Definir la secuencia de codigos. Implementar un programa que automatice la creación del archivo.
+
+03/10/2025
+Trabajar de forma disciplinada y con claridad es esencial para salir adelante, conseguir un enfoque claro y conciso.
+Tener en cuenta los resultados que quiero conseguir y trazar una ruta para conseguirlos.
