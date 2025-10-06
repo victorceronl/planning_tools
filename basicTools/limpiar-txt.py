@@ -1,17 +1,17 @@
 import re
 
-def limpiar_txt(archivo_entrada, archivo_salida):
+def limpiar_txt(archivo_entrada, archivo_salida, debug=False):
     # Leer contenido del archivo original
     with open(archivo_entrada, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # 1. Eliminar tabs (\t)
+    # 1. Eliminar tabs
     clean_text = content.replace("\t", " ")
 
-    # 2. Reemplazar múltiples espacios consecutivos por uno
+    # 2. Reemplazar múltiples espacios consecutivos
     clean_text = re.sub(r" +", " ", clean_text)
 
-    # 3. Reducir múltiples saltos de línea (más de 2) a solo 2
+    # 3. Reducir múltiples saltos de línea
     clean_text = re.sub(r"\n{3,}", "\n\n", clean_text)
 
     # 4. Dividir en líneas
@@ -19,29 +19,32 @@ def limpiar_txt(archivo_entrada, archivo_salida):
     merged_lines = []
 
     for i, line in enumerate(lines):
-        if not line.strip():
+        line = line.strip()
+        if not line:
             continue  # ignorar líneas vacías
 
         if i < len(lines) - 1:
-            next_line = lines[i+1].strip()
+            next_line = lines[i + 1].strip()
 
-            # Detectar si la línea es un título o capítulo
-            if (line.strip().startswith("CHAPTER") or 
-                next_line.startswith("CHAPTER") or 
-                next_line.isupper() or 
-                line.strip().endswith((".", "?", "!", ":"))):
-                merged_lines.append(line.strip())
+            # Detectar si unir o no
+            if (line.endswith((".", "?", "!", ":"))
+                or line.startswith("CHAPTER")
+                or next_line.startswith("CHAPTER")
+                or next_line.isupper()):
+                merged_lines.append(line)
             else:
-                # Unir con la siguiente línea
-                merged_lines.append(line.strip() + " " + next_line)
-                lines[i+1] = ""  # evitar duplicado
+                merged_lines.append(line + " " + next_line)
+                lines[i + 1] = ""  # evita repetir línea
         else:
-            merged_lines.append(line.strip())
+            merged_lines.append(line)
 
-    # Reconstruir el texto limpio
+        if debug:
+            print(f"[Línea {i}] {line[:60]}...")
+
+    # Reconstruir texto limpio
     final_text = "\n".join([l for l in merged_lines if l.strip() != ""])
 
-    # Guardar en archivo nuevo
+    # Guardar resultado
     with open(archivo_salida, "w", encoding="utf-8") as f:
         f.write(final_text)
 
@@ -49,4 +52,5 @@ def limpiar_txt(archivo_entrada, archivo_salida):
 
 
 # Ejemplo de uso:
-# limpiar_txt("salida.txt", "salida_legible.txt")
+if __name__ == "__main__":
+    limpiar_txt("salida.txt", "salida_legible.txt", debug=True)
