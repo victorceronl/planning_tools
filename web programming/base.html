@@ -1,0 +1,28 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}vBooks{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'vbooks_01/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">vBooks @victorceronl</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+            <a href="{% url 'category' 'Negocios' %}">Negocios</a>
+            <a href="{% url 'category' 'BestSellers' %}">BestSellers</a>
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>Copyright © 2025 @victorceronl. All rights reserved.</p>
+    </footer>
+</body>
+</html>

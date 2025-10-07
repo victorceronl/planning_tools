@@ -1,0 +1,21 @@
+{% extends 'vbooks_01/base.html' %}
+{%load static %}
+
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1>Libros Destacados</h1>
+<div class="ebook-list">
+  {% for ebook in ebooks %}
+    <div class="ebook-item">
+      <a href="{% url 'ebook_detail' ebook.id %}">
+        {% if ebook.cover %}
+          <img src="{{ ebook.cover.url }}" alt="{{ ebook.title }}" class="cover">
+        {% endif %}
+        <h3>{{ ebook.title }}</h3>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

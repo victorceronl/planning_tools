@@ -1,0 +1,19 @@
+{% extends 'vbooks_01/base.html' %}
+
+{% block title %}{{ ebook.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ ebook.title }}</h2>
+{% if ebook.cover %}
+  <img src="{{ ebook.cover.url }}" alt="{{ ebook.title }}" class="cover-detail">
+{% endif %}
+<p>{{ ebook.subtitle }}</p>
+<p><strong>Descripción:</strong> {{ ebook.description }}</p>
+<p><strong>Páginas:</strong> {{ ebook.pages }}</p>
+<p><strong>Publicado:</strong> {{ ebook.publication_date|date:"d/m/Y" }}</p>
+<p><strong>Descargas:</strong> {{ ebook.download_count }}</p>
+
+<a href="{% url 'download_file' ebook.id %}">
+  <button>📥 Descargar</button>
+</a>
+{% endblock %}

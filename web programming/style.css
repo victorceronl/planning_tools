@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #131313;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar ul li a:hover {
+    color: #ffcc00;
+}
+.content {
+    padding: 20px;
+}
+.ebook-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.ebook-item {
+    width: 200px;
+    text-align: center;
+}
+.cover, .cover-detail {
+    width: 300px;
+    height: auto;
+}
