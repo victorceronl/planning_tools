@@ -44,3 +44,4 @@ def corregir_texto(archivo_entrada="salida.txt", archivo_salida="salida_corregid
 # Ejemplo de uso
 if __name__ == "__main__":
     corregir_texto("salida.txt", "salida_corregido.txt")
+    
