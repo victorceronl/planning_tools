@@ -49,8 +49,8 @@ def txt_a_epub(ruta_txt, ruta_epub, titulo="Mi Libro", autor="Desconocido", port
 if __name__ == "__main__":
     txt_a_epub(
         "mi_texto.txt",        # archivo de entrada
-        "The Adweek Copywriting Handbook.epub",       # archivo de salida
-        titulo="The Adweek Copywriting Handbook",
-        autor="Joseph Sugarman",
+        "Think Again.epub",       # archivo de salida
+        titulo="Think Again",
+        autor="Adam Grant",
         portada="portada.jpg"  # imagen de portada opcional
     )
