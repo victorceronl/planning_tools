@@ -49,8 +49,8 @@ def txt_a_epub(ruta_txt, ruta_epub, titulo="Mi Libro", autor="Desconocido", port
 if __name__ == "__main__":
     txt_a_epub(
         "mi_texto.txt",        # archivo de entrada
-        "The Power of Habit.epub",       # archivo de salida
-        titulo="The Power of Habit",
-        autor="Charles Duhigg",
+        "Thinking Fast and Slow.epub",       # archivo de salida
+        titulo="Thinking Fast and Slow",
+        autor="Daniel Kahneman",
         portada="portada.jpg"  # imagen de portada opcional
     )
