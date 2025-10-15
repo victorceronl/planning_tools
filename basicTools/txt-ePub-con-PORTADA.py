@@ -49,8 +49,8 @@ def txt_a_epub(ruta_txt, ruta_epub, titulo="Mi Libro", autor="Desconocido", port
 if __name__ == "__main__":
     txt_a_epub(
         "mi_texto.txt",        # archivo de entrada
-        "Deep Work.epub",       # archivo de salida
-        titulo="Deep Work",
-        autor="Cal Newport",
+        "The Power of Now.epub",       # archivo de salida
+        titulo="The Power of Now",
+        autor="Eckhart Tolle",
         portada="portada.jpg"  # imagen de portada opcional
     )
