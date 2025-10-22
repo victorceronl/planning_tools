@@ -1,7 +1,7 @@
 import os
 
 # Ruta a la carpeta con los archivos
-carpeta = 'C:\Users\Diseño 1\Downloads\vBooks'  # <-- CAMBIA esto a la ruta real de tu carpeta
+carpeta = 'C:\\Users\\Diseño 1\\Downloads\\vBooks'  # <-- CAMBIA esto a la ruta real de tu carpeta
 
 # Texto a eliminar del nombre de archivo
 texto_a_eliminar = '_OceanofPDF.com_'
