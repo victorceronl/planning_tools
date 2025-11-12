@@ -1,10 +1,10 @@
 // Wallpaper motivacional optimizado para iPhone 14 Pro (1179x2556)
-// Fondo negro mate con degradado real y textura granular
+// Fondo negro humo con textura granular mate y frases motivacionales
 
 // ---------- CONFIGURACIÓN ----------
-const wallpaperSize = { w: 1179, h: 2556 }; // tamaño real iPhone 14 Pro
-const backgroundGradient = ["#000000", "#1A1A1A"]; // negro degradado
-const grainIntensity = 0.15; // 0.05=sutil, 0.2=marcado
+const wallpaperSize = { w: 1179, h: 2556 };
+const backgroundGradient = ["#0F0F0F", "#2A2A2A"]; // gris humo oscuro
+const grainIntensity = 0.12;
 const phraseList = [
   "Hazlo con ganas o no lo hagas.",
   "Pequeños pasos, grandes resultados.",
@@ -27,13 +27,19 @@ ctx.size = new Size(wallpaperSize.w, wallpaperSize.h);
 ctx.opaque = true;
 ctx.setTextAlignedCenter();
 
-// ---- fondo degradado real ----
+// ---- fondo degradado compatible ----
 function drawGradient(ctx, colors) {
-  const grad = new LinearGradient();
-  grad.colors = [new Color(colors[0]), new Color(colors[1])];
-  grad.locations = [0, 1];
-  ctx.setGradient(grad, new Point(0, 0), new Point(0, ctx.size.height));
-  ctx.fillRect(new Rect(0, 0, ctx.size.width, ctx.size.height));
+  const [startColor, endColor] = colors.map(c => new Color(c));
+  const steps = 600; // más pasos = degradado más suave
+  for (let i = 0; i < steps; i++) {
+    const t = i / steps;
+    const r = startColor.red + (endColor.red - startColor.red) * t;
+    const g = startColor.green + (endColor.green - startColor.green) * t;
+    const b = startColor.blue + (endColor.blue - startColor.blue) * t;
+    ctx.setFillColor(new Color(new Color(r, g, b)));
+    const y = (ctx.size.height / steps) * i;
+    ctx.fillRect(new Rect(0, y, ctx.size.width, ctx.size.height / steps + 1));
+  }
 }
 
 // ---- efecto granulado mate ----
@@ -42,8 +48,8 @@ function addGrain(ctx, intensity) {
   for (let i = 0; i < totalDots; i++) {
     const x = Math.random() * ctx.size.width;
     const y = Math.random() * ctx.size.height;
-    const brightness = Math.random() * 0.2 + 0.4;
-    const alpha = Math.random() * 0.15;
+    const brightness = Math.random() * 0.3 + 0.35;
+    const alpha = Math.random() * 0.18;
     const c = Math.floor(brightness * 255);
     ctx.setFillColor(new Color(`#${c.toString(16).padStart(2, "0").repeat(3)}`, alpha));
     ctx.fillRect(new Rect(x, y, 1.2, 1.2));
