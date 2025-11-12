@@ -1,5 +1,5 @@
 // Wallpaper motivacional optimizado para iPhone 14 Pro (1179x2556)
-// Fondo negro humo con textura granular mate y frases motivacionales
+// Fondo gris humo oscuro con textura granular mate y frases motivacionales
 
 // ---------- CONFIGURACIÓN ----------
 const wallpaperSize = { w: 1179, h: 2556 };
@@ -27,16 +27,27 @@ ctx.size = new Size(wallpaperSize.w, wallpaperSize.h);
 ctx.opaque = true;
 ctx.setTextAlignedCenter();
 
+// ---- función auxiliar para convertir RGB → HEX ----
+function rgbToHex(r, g, b) {
+  const toHex = v => {
+    const h = Math.round(v * 255).toString(16).padStart(2, "0");
+    return h;
+  };
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+
 // ---- fondo degradado compatible ----
 function drawGradient(ctx, colors) {
-  const [startColor, endColor] = colors.map(c => new Color(c));
+  const startColor = new Color(colors[0]);
+  const endColor = new Color(colors[1]);
   const steps = 600; // más pasos = degradado más suave
   for (let i = 0; i < steps; i++) {
     const t = i / steps;
     const r = startColor.red + (endColor.red - startColor.red) * t;
     const g = startColor.green + (endColor.green - startColor.green) * t;
     const b = startColor.blue + (endColor.blue - startColor.blue) * t;
-    ctx.setFillColor(new Color(new Color(r, g, b)));
+    const hex = rgbToHex(r, g, b);
+    ctx.setFillColor(new Color(hex));
     const y = (ctx.size.height / steps) * i;
     ctx.fillRect(new Rect(0, y, ctx.size.width, ctx.size.height / steps + 1));
   }
