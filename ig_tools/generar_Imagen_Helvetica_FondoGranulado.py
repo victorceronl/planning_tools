@@ -58,5 +58,5 @@ def crear_imagen(texto, fondo_rgb=(0, 0, 0), tamano_fuente=80, nombre_archivo="s
     print(f"Imagen guardada como {nombre_archivo}")
 
 # Ejemplo de uso
-texto = "Lo que es para ti, ni aunque te quites.\nLo que no, ni aunque te pongas."
+texto = "Las personas que trabajan en \nsi mismas no te necesitan. \n\n\n Te eligen."
 crear_imagen(texto, fondo_rgb=(20, 20, 20), tamano_fuente=150, nombre_archivo="frase_granulado.jpg")
